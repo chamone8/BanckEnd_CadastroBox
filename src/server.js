@@ -6,7 +6,11 @@ const cors = require('cors');
 app.use(express.json());
 app.use(cors());
 
+const server = require('http').Server(app); // const server = http.Server(app)  seriam a mesma coisa
+
+
+
 app.use(route);
 
-app.listen(80);
+server.listen(process.env.PORT || 80);
 
